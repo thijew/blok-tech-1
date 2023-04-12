@@ -1,6 +1,15 @@
-
+// Make a connecetion to mongodb
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://thijew:<hbeo89PHHxI4IAr4>@blok-tech.kkeswkr.mongodb.net/?retryWrites=true&w=majority";
+const uri =
+ "mongodb+srv://" +
+ process.env.DB-USERNAME
+ ":" +
+ process.env.DB-PASS +
+  "@" + 
+  process.env.DB-HOST +
+  "/" +
+  process.env.DB-NAME +
+  "?retryWrites=true&w=majority";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
