@@ -1,4 +1,8 @@
+require('dotenv').config();
+
+
 // Make a connecetion to mongodb
+
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri =
  "mongodb+srv://" +
