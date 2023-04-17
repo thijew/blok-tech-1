@@ -1,36 +1,40 @@
 # My concept
 
-## First idea's
+## First ideas
 
 - An app where people can find love based on the foods they like.
 - An app where people can get connected to elderly people to go on walks with.
 - An app where people who like to go to museums can find each other to go together.
 - An app where students can find each other to study together or exchange information.
 - An app where people who are into punk music and the scene can find each other, exchange and music
+- An app where people can make reservations for certain products and pick up the product at a certain time.
 
-### Chosen job story
+### Chosen idea
 
-#### An app where people who are into punk music and the scene can find each other, to go to concerts together or exchange music
+> An app where people can make reservations for certain products and pick up the product at a certain time.
 
 ### concept ideas
 
-So the target audience is going to be the punk scene. The ages go from 16 to 70 years old, but since this is an app I would expect it to be used in the younger generation. The look and feel off the app should obviously be dark and give that metal/punk feeling. The main user interactions could be:
+So I am going to be making the web application for an actual company, located on a camping close to the sea. The company is called "Het Kippaleis" it's a company which primary sells grilled chicken and fries. The grilled chickens are very popular and often sold out. That is why the client wants a reservation system so that they can make a better estimation of how many they are going to sell. The chickens have to grill for at least 2 hours and they start selling them at 5. That is why we want the reservation program to close at 2. The client also wants the customers to be able to order to far in advance. That's why we will limit it to a week.
 
-- login and creating an account
-- Filling in a form about your music taste
-- Being able to connect with each other and share music.
-- Liking an other users profile.
+- A form where customers can fill in how many chickens they want, when they want them and some basic information about them.
+- A payment system to make the customer pay for a deposit.
+- Find basic information about the company.
+- Being able to save their information for future orders.
+- Log in feature
 
 
 ### 5 Job stories
 
-- When a new user enters my site, I want them to able to log in and create an account, so I can connect them with each other.
-- When a user create's a profile , I want the user to fill in a form of some basic information, so that I can base my filter options off of that.
-- When a user clicks on an other users profile, I want them to be able to see some information about them, so that they can like their profile.
-- When a user likes an other user, I want them to be able to send a message to each other, so that they can connect.
-- When a user fills in the exact same information as an other user, I want them to get a special message.
+- When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
+- When a user fills in the form, I want the user to be able to post the information, so that I can send them an confirmation email.
+- When a new user enters my site, I want them to be able to find some basic information about the company, so that the company doesn't get too many faq.
+- When a user fills in the form, I want the information to be stored so that, I can autofill it for them in future reservations. 
+
 
 ## Job story
 
-For my final job story I combined 2 job stories, my job story =
-> When a user create's a profile, I want them to fill in a form about their music taste, So that I can display that information on the users profile.
+For my final job story I am going to focus on the first job story:
+> When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
+
+Because this is the main feature the client wants to get done, but I want to try and finish all job stories.
