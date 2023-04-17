@@ -38,3 +38,20 @@ For my final job story I am going to focus on the first job story:
 > When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
 
 Because this is the main feature the client wants to get done, but I want to try and finish all job stories.
+
+### Requirement list
+#### Must haves
+
+- Make a reservation by filling in a form with a name, phone number, amount of products and a time. 
+ - Find basic information about the company.
+ - Define a specific time when they want to pick up the product.
+ - Get an confirmation e-mail when the order is successful
+ - Navigate the site easily.
+ - Get motivated to order. 
+
+ #### Could haves
+
+ - A log in feature
+ - Save their form information for feature orders. 
+
+
