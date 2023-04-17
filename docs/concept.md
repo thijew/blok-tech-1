@@ -23,14 +23,12 @@ So I am going to be making the web application for an actual company, located on
 - Being able to save their information for future orders.
 - Log in feature
 
-
 ### 5 Job stories
 
 - When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
 - When a user fills in the form, I want the user to be able to post the information, so that I can send them an confirmation email.
 - When a new user enters my site, I want them to be able to find some basic information about the company, so that the company doesn't get too many faq.
-- When a user fills in the form, I want the information to be stored so that, I can autofill it for them in future reservations. 
-
+- When a user fills in the form, I want the information to be stored so that, I can autofill it for them in future reservations.
 
 ## Job story
 
@@ -40,18 +38,20 @@ For my final job story I am going to focus on the first job story:
 Because this is the main feature the client wants to get done, but I want to try and finish all job stories.
 
 ### Requirement list
+
 #### Must haves
 
-- Make a reservation by filling in a form with a name, phone number, amount of products and a time. 
- - Find basic information about the company.
- - Define a specific time when they want to pick up the product.
- - Get an confirmation e-mail when the order is successful
- - Navigate the site easily.
- - Get motivated to order. 
-
- #### Could haves
-
- - A log in feature
- - Save their form information for feature orders. 
+- Make a reservation by filling in a form with a name, phone number, amount of products and a time.
+- Find basic information about the company.
+- Define a specific time when they want to pick up the product.
+- Get an confirmation e-mail when the order is successful
+- Navigate the site easily.
+- Get motivated to order.
+- Close reservation form at 2 and open back up after 9 for the next day.
 
 
+#### Could haves
+
+- A log in feature
+- Save their form information for feature orders.
+- Displaying the reservation information. 
