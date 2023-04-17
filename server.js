@@ -1,8 +1,12 @@
+//Require express
 const express = require('express')
 const app = express()
+//Make a connection to the db
+const runDB = require('./config/db')
+runDB()
 
 
-require('dotenv').config();
+require('dotenv').config()
 
 app.set('view engine', 'ejs')
 
