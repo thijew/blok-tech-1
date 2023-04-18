@@ -21,10 +21,10 @@ async function runDB() {
 
   console.log("Trying to connect to db:")
 
-  
   client.connect(err => {
     if (err)
       {throw err}
-  });
+    else {console.log("Connected to db")}
+  })
 }
   module.exports = runDB;
