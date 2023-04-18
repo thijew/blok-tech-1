@@ -19,10 +19,12 @@ async function runDB() {
     serverApi: ServerApiVersion.v1,
   });
 
+  console.log("Trying to connect to db:")
+
+  
   client.connect(err => {
     if (err)
       {throw err}
   });
-  console.log("Connected to db successfully!")
 }
   module.exports = runDB;
