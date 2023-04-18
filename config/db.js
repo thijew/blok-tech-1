@@ -1,6 +1,6 @@
-require('dotenv').config();
+require('dotenv').config()
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion } = require('mongodb')
 
 // Make a connection to mongodb
 
@@ -9,22 +9,20 @@ async function runDB() {
     `mongodb+srv://${process.env.DB_USERNAME}
     :${process.env.DB_PASS}
     @${process.env.DB_HOST}
-    /${process.env.DB_NAME}
-    ?retryWrites=true&w=majority`;
+    /${process.env.DB_NAME}?retryWrites=true&w=majority`
 
   // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-  const client = new MongoClient(uri,{
+  const client = new MongoClient(uri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true, 
+    useUnifiedTopology: true,
     serverApi: ServerApiVersion.v1,
   });
 
   console.log("Trying to connect to db:")
 
   client.connect(err => {
-    if (err)
-      {throw err}
-    else {console.log("Connected to db")}
+    if (err) { throw err }
+    else { console.log("Connected to db") }
   })
 }
-  module.exports = runDB;
+module.exports = runDB
