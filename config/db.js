@@ -16,13 +16,21 @@ async function runDB() {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     serverApi: ServerApiVersion.v1,
-  });
+  })
 
   console.log("Trying to connect to db:")
-
-  client.connect(err => {
-    if (err) { throw err }
-    else { console.log("Connected to db") }
-  })
+  
+  try {
+    await client.connect();
+    db = client.db(process.env.DB_NAME);
+  } catch (error) {
+    throw error;
+  }
 }
-module.exports = runDB
+
+// client.connect(err => {
+//   if (err) { throw err }
+//   else { console.log("Connected to db") }
+// })
+
+module.exports = runDB;
