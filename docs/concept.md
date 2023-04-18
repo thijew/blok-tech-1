@@ -32,10 +32,12 @@ So I am going to be making the web application for an actual company, located on
 
 ## Job story
 
-For my final job story I am going to focus on the first job story:
-> When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
+For my final job story:
+> When a new user enters my site, I want them to be able to fill in a form, with some basic information about themselves, the reservation time and the amount they want to reserve, so that I can send them a confirmation e-mail and show the data to the client.
 
-Because this is the main feature the client wants to get done, but I want to try and finish all job stories.
+*Iterartions:*
+
+> 1. When a new user enters my site, I want them to able to find the order form easily, so that I can know what they want to reserve.
 
 ### Requirement list
 
@@ -47,11 +49,11 @@ Because this is the main feature the client wants to get done, but I want to try
 - Get an confirmation e-mail when the order is successful
 - Navigate the site easily.
 - Get motivated to order.
-- Close reservation form at 2 and open back up after 9 for the next day.
-
 
 #### Could haves
 
 - A log in feature
 - Save their form information for feature orders.
-- Displaying the reservation information.
+- Displaying the reservation information for the client.
+- Close reservation form at 2 and open back up after 9 for the next day.
+- Be able to cancel the order
