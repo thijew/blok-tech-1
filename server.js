@@ -11,6 +11,12 @@ const port = process.env.PORT
 
 app.set('view engine', 'ejs')
 
+// Routes
+const pages = require('./routes/pages')
+
+
+// Using routes
+app.use('/', pages)
 app.get('/', (req, res) => {
     console.log("does it work?")
     res.render('pages/home')

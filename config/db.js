@@ -16,14 +16,6 @@ async function runDB() {
   })
 
   console.log("Trying to connect to db:")
-  
-//   try {
-//     await client.connect();
-//     db = client.db(process.env.DB_NAME);
-//   } catch (error) {
-//     throw error;
-//   }
-// }
 
 await client.connect(err => {
   if (err) { throw err }
