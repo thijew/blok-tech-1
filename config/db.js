@@ -5,11 +5,8 @@ const { MongoClient, ServerApiVersion } = require('mongodb')
 // Make a connection to mongodb
 
 async function runDB() {
-  const uri =
-    `mongodb+srv://${process.env.DB_USERNAME}
-    :${process.env.DB_PASS}
-    @${process.env.DB_HOST}
-    /${process.env.DB_NAME}?retryWrites=true&w=majority`
+  const uri = (process.env.DB_URI)
+
 
   // Create a MongoClient with a MongoClientOptions object to set the Stable API version
   const client = new MongoClient(uri, {
@@ -20,17 +17,17 @@ async function runDB() {
 
   console.log("Trying to connect to db:")
   
-  try {
-    await client.connect();
-    db = client.db(process.env.DB_NAME);
-  } catch (error) {
-    throw error;
-  }
+//   try {
+//     await client.connect();
+//     db = client.db(process.env.DB_NAME);
+//   } catch (error) {
+//     throw error;
+//   }
+// }
+
+await client.connect(err => {
+  if (err) { throw err }
+})
+
 }
-
-// client.connect(err => {
-//   if (err) { throw err }
-//   else { console.log("Connected to db") }
-// })
-
 module.exports = runDB;
