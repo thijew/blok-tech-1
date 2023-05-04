@@ -9,7 +9,9 @@ runDB().then(console.log("connected to DB"))
 
 const port = process.env.PORT
 
-app.set('view engine', 'ejs')
+// Set ejs
+app.set('view engine', 'ejs');
+app.set('views, view');
 
 // Routes
 const pages = require('./routes/pages')
@@ -22,9 +24,7 @@ app.get('/', (req, res) => {
     res.render('pages/home')
 })
 
-//test
-
-
+//Set server to listen to port 
 app.listen(port, () => {
     console.log(`Example app listening on  http://localhost:${port}`);
   });
