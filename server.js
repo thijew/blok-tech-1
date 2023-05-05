@@ -11,7 +11,7 @@ const port = process.env.PORT
 
 // Set ejs
 app.set('view engine', 'ejs');
-app.set('views, view');
+
 
 // Routes
 const pages = require('./routes/pages')
