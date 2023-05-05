@@ -6,7 +6,7 @@ const pages = express.Router();
 pages 
 // Home page 
 .get('/', (req, res) => {
-    console.log("does it work?")
+    console.log("Welcome to the homepage")
     res.render('pages/home')
 })
 

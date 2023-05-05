@@ -10,19 +10,25 @@ runDB().then(console.log("connected to DB"))
 const port = process.env.PORT
 
 // Set ejs
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 
 
 // Routes
-const pages = require('./routes/pages')
+// const pages = require('./routes/pages')
+
+// Home page 
+.get('/', (req, res) => {
+    console.log("Welcome to the homepage")
+    res.render('pages/home')
+})
 
 
 // Using routes
-app.use('/', pages)
-app.get('/', (req, res) => {
-    console.log("does it work?")
-    res.render('pages/home')
-})
+// Home
+// app.use('/', pages)
+// Form page
+
+
 
 //Set server to listen to port 
 app.listen(port, () => {
