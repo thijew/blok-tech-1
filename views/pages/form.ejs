@@ -4,18 +4,25 @@
 <% include("../components/head"); %>
 
     <body>
-        <% include("../components/header"); %>
+        <% include("../components/footer"); %>
+
 
             <main>
+                
                 <h1>Reserver uw halve kip</h1>
-                <div>
-                    
-                </div>
+                <form action="reserve" method="post">
+
+                    <div class="question-1">
+                        <label for="chicken-amount">0</label>
+                        <input type="number" id="chickens" value="0" />
+                        <input type="button" onclick="addOne()" value="addOne" />
+                        <input type="button" onclick="removeOne()" value="removeOne" />
+                    </div>
+
+                </form>
             </main>
 
-            <% include("../components/footer"); %>
 
-                <script src="server.js"></script>
     </body>
 
 </html>
