@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<% include("../components/head"); %>
+<%- include("../components/head") %>
 
     <body>
-        <% include("../components/footer"); %>
+        <%- include("../components/header") %>
 
 
             <main>
@@ -13,10 +13,10 @@
                 <form action="reserve" method="post">
 
                     <div class="chicken-amount">
-                        <label for="chickens">Number of chickens:</label>
+                        <label>Number of chickens:</label>
                         <input type="number" id="chickens" name="chickens" value="0" min="0" />
                         <button id="addOne" onclick="addOne()">+1</button>
-                        <button id="removeOne" onclick="removeOne()">-1</button>
+                        <button id="removeOne" onclick="removeOne(); return false;">-1</button>
                       </div>
                     
                       <div class="date">
@@ -28,12 +28,16 @@
                         %>
                         <input type="date" id="date-input" name="date" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>">
                       </div>
+                      <div class="submit-button">
+                        <input type="submit" value="Submit">
+                      </div>
                       
                 </form>
+                <%- include("../components/footer") %>
             </main>
 
-        <script src="/static/styles/scripts/addChicken.js"></script>
-        <script src="/static/styles/scripts/maxDate.js"></script>
+        <script src="/scripts/addChicken.js"></script>
+        <!-- <script src="/scripts/maxDate.js"></script> -->
 
     </body>
 

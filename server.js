@@ -7,11 +7,14 @@ const app = express()
 const runDB = require('./config/db')
 runDB().then(console.log("connected to DB"))
 
+app.use(express.static('static'))
+
 
 const port = process.env.PORT
 
 // Set ejs
 app.set('view engine', 'ejs')
+
 
 // Routes
 // const pages = require('./routes/pages')
@@ -30,6 +33,7 @@ app.set('view engine', 'ejs')
     console.log("Welcome to the formpage")
     res.render('pages/form')
 })
+
 
 
 
