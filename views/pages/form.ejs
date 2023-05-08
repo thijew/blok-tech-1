@@ -14,20 +14,26 @@
 
                     <div class="chicken-amount">
                         <label for="chickens">Number of chickens:</label>
-                        <input type="number" id="chickens" name="chickens" value="<%= chickens %>" />
-                        <input type="button" onclick="addOne()" value="+1" />
-                        <input type="button" onclick="removeOne()" value="-1" />
+                        <input type="number" id="chickens" name="chickens" value="0" min="0" />
+                        <button id="addOne" onclick="addOne()">+1</button>
+                        <button id="removeOne" onclick="removeOne()">-1</button>
                       </div>
                     
-                    <div class="date">
-                        <label for="date-input">Select a date:</label>
-                        <input type="date" id="date-input" name="date" min="<%= minDate %>" max="<%= maxDate %>">
-
-                    </div>
+                      <div class="date">
+                        <label for="date-input">Wanneer wilt u de halve kip reserveren?</label>
+                        <!-- Set reservation to 7 days max -->
+                        <% 
+                          const today = new Date();
+                          const maxDate = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
+                        %>
+                        <input type="date" id="date-input" name="date" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>">
+                      </div>
+                      
                 </form>
             </main>
 
-        <script src="/static/styles/scripts/"></script>
+        <script src="/static/styles/scripts/addChicken.js"></script>
+        <script src="/static/styles/scripts/maxDate.js"></script>
 
     </body>
 

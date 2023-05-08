@@ -1,20 +1,20 @@
-// Get the chicken amount input element
-const chickenInput = document.getElementById('chickens');
-// Add and remove a chicken 
-function addOne() {
-  const currentValue = parseInt(chickenInput.value);
-  chickenInput.value = currentValue + 1;
-}
+// Script to add and remove chickens
 
+const input = document.getElementById("chickens");
+const addButton = document.getElementById("addOne");
+const removeButton = document.getElementById("removeOne");
 
-function removeOne() {
-  const currentValue = parseInt(chickenInput.value);
-  chickenInput.value = Math.max(currentValue - 1, 0); // Ensure minimum value of 0
-}
+const addOne = () => {
+  const currentValue = parseInt(input.value);
+  input.value = currentValue + 1;
+};
 
-// Add the functions to the corresponding HTML buttons
-const addOneButton = document.querySelector('input[value="+1"]');
-addOneButton.onclick = addOne;
+const removeOne = () => {
+  const currentValue = parseInt(input.value);
+  if (currentValue > 0) {
+    input.value = currentValue - 1;
+  }
+};
 
-const removeOneButton = document.querySelector('input[value="-1"]');
-removeOneButton.onclick = removeOne;
+addButton.addEventListener("click", addOne);
+removeButton.addEventListener("click", removeOne);
