@@ -14,7 +14,7 @@
 
                     <div class="chicken-amount">
                         <label>Number of chickens:</label>
-                        <input type="number" id="chickens" name="chickens" value="0" min="0" />
+                        <input type="number" id="chickens" name="chickens" value="0" min="0" max="20" />
                       </div>
                     
                       <div class="date">
@@ -33,14 +33,14 @@
                       </div>
 
                       <div class="submit-button">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Reserveren">
                       </div>
                       
                 </form>
                 <%- include("../components/footer") %>
             </main>
 
-        <script src="/scripts/addChicken.js"></script>
+        <script src="/scripts/orderTimes.js"></script>
         <!-- <script src="/scripts/maxDate.js"></script> -->
 
     </body>
