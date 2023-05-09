@@ -10,7 +10,7 @@
             <main>
                 
                 <h1>Reserver uw halve kip</h1>
-                <form action="reserve" method="post">
+                <form action="reserve" method="/post">
 
                     <div class="chicken-amount">
                         <label>Number of chickens:</label>
@@ -29,7 +29,8 @@
                       
                       <div class="time">
                         <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
-                        <input type="time" id="time-input" value="17:00" name="time" min="17:00"  max="20:00" required;>
+                        <select id="time-input" name="time" required>
+                        <!-- <input type="time" id="time-input" value="17:00" name="time" min="17:00"  max="20:00" required;> -->
                       </div>
 
                       <div class="submit-button">
@@ -40,7 +41,8 @@
                 <%- include("../components/footer") %>
             </main>
 
-        <script src="/scripts/orderTimes.js"></script>
+        <script src="/scripts/addChicken.js"></script>
+        <script src="/scripts/orderTime.js"></script>
         <!-- <script src="/scripts/maxDate.js"></script> -->
 
     </body>
