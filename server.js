@@ -8,13 +8,14 @@ const runDB = require('./config/db')
 runDB().then(console.log("connected to DB"))
 //require multer
 // const multer = require('multer')
-//require body-parser
-// const bodyParser = require('body-parser');
+// require body-parser
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
-//Server static files
+//Serve static files
 app.use(express.static('static'))
+
 // const path = require('path')
 // app.use('static', express.static(path.join(__dirname, 'public')))
 
@@ -25,21 +26,21 @@ const port = process.env.PORT
 app.set('view engine', 'ejs')
 
 
-
 //Pages
 // Home page 
-.get('/', (req, res) => {
+app.get('/', (req, res) => {
     console.log("Welcome to the homepage")
     res.render('pages/home')
 })
 // Form page
-.get('/form', (req, res) => {
+app.get('/form', (req, res) => {
     console.log("Welcome to the formpage")
     res.render('pages/form')
 })
-app.post('/form',  (req, res) => {
-    console.log("running")
-})
+
+app.post('/reserve', (req, res) => {
+    (console.log(req.body))
+  })
 
 //Set server to listen to port 
 app.listen(port, () => {

@@ -6,14 +6,13 @@
     <body>
         <%- include("../components/header") %>
 
-
             <main>
                 
-                <h1>Reserver uw halve kip</h1>
+                <h1>Reserveer uw halve kip</h1>
                 <form action=/reserve method=/post>
 
                     <div class="chicken-amount">
-                        <label>Number of chickens:</label>
+                        <label>Hoeveel halve kippen wilt u reserveren? </label>
                         <input type="number" id="chickens" name="chickens" value="0" min="0" max="20" />
                       </div>
                     
@@ -33,14 +32,14 @@
                       </div>
 
                       <div class="submit-button">
-                        <input type="submit" value="reservation">
+                        <input type="submit" value="Reserveer">
                       </div>
                       
                 </form>
                 <%- include("../components/footer") %>
             </main>
 
-        <script src="/scripts/addChicken.js"></script>
+        <!-- <script src="/scripts/addChicken.js"></script> -->
         <script src="/scripts/orderTime.js"></script>
         <!-- <script src="/scripts/maxDate.js"></script> -->
 
