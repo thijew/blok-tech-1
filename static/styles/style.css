@@ -1,6 +1,9 @@
 /* Root */
 :root {
-  --color-primary: #000;
+  --color-primary: #432818;
+  --color-secondary: #99582A;
+  --color-bg: #ffe6a7;
+  --color-text: #e1aa28;
 }
 
 /* FONT */
@@ -14,17 +17,32 @@
 
 body {
   font-family: "roboto", "lato", Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+}
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 3em;
 }
 
 h1 {
   font-family: "lato", Arial, Helvetica, sans-serif;
 }
 
-/* header nav */
+
+/* header */
+
+header {
+  position: fixed;
+  background-color: var(--color-primary);
+}
 .menu-icon {
   width: 1.8em;
   height: 0.25em;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   margin: 0.25em 0;
 }   
 
