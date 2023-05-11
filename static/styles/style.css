@@ -1,7 +1,14 @@
-/* header */
+/* Root */
+:root {
+  --color-primary: #000;
+}
+
+
+/* header nav */
 .menu-icon {
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
+  width: 1.8em;
+  height: 0.25em;
+  background-color: var(--color-primary);
+  margin: 0.25em 0;
 }   
+
