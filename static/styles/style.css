@@ -3,6 +3,22 @@
   --color-primary: #000;
 }
 
+/* FONT */
+
+@font-face {
+  font-family: "roboto", "lato";
+  src: 
+      url(../fonts/Roboto-Regular.woff2) format("woff2"), 
+      url(../fonts/Lato-Bold.woff2) format("woff2");
+}
+
+body {
+  font-family: "roboto", "lato", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: "lato", Arial, Helvetica, sans-serif;
+}
 
 /* header nav */
 .menu-icon {
