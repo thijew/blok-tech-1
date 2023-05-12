@@ -40,6 +40,14 @@ app.get('/form', (req, res) => {
 
 app.post('/reserve', (req, res) => {
     (console.log(req.body))
+    const today = new Date().toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' });
+    console.log(today)
+    const reservations = {
+        chickens: req.body.chickens,
+        today: today
+    }
+
+    res.render('pages/admin', reservations)
   })
 
 //Set server to listen to port 

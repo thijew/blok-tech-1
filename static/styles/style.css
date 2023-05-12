@@ -15,10 +15,11 @@
       url(../fonts/Lato-Bold.woff2) format("woff2");
 }
 
-body {
+html{
   font-family: "roboto", "lato", Arial, Helvetica, sans-serif;
   background-color: var(--color-bg);
 }
+
 main {
   align-items: center;
   display: flex;

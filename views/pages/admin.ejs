@@ -7,7 +7,21 @@
         <%- include("../components/header"); %>
 
             <main>
-                <h1>test</h1>
+                <h1>Reserveringen</h1>
+
+                <div class="reserve-day">
+                    <ul>
+                        <% for (let i = 0; i < 7; i++) { %>
+                            <% const date = new Date(); %>
+                            <% date.setDate(date.getDate() + i); %>
+                            <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long', month: 'long', day: 'numeric' }) %></li>
+                            <!-- <li>WEATHER API</li> -->
+                            <li>Reserveringen: <%= chickens %> </li>
+                          <% } %>
+
+
+                    </ul>
+                </div>
             </main>
 
             <%- include("../components/footer"); %>
