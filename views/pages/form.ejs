@@ -13,17 +13,17 @@
                   
                     <div class="form-name">
                         <label>Wat is uw naam?</label>
-                        <input type="text" id="name" placeholder="Uw naam" required>
+                        <input type="text" id="name" name="name" placeholder="Uw naam" required>
                     </div>
 
                     <div class="form-phone">
                       <label>Wat is uw telefoon nummer?</label>
-                      <input type="tel" id="phone" placeholder="+31612345678" required>
-                  </div>
+                      <input type="tel" id="phone" name="phone" placeholder="+31612345678" required>
+                    </div>
 
                     <div class="form-chickens">
                         <label>Hoeveel halve kippen wilt u reserveren? </label>
-                        <input type="number" id="chickens" name="chickens" value="0" min="0" max="20" required/>
+                        <input type="number" id="chickens" name="chickens" placeholder="0" min="0" max="20" required/>
                       </div>
                     
                       <div class="form-date">
@@ -33,7 +33,7 @@
                           const today = new Date();
                           const maxDate = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
                         %>
-                        <input type="date" id="date-input" name="date" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
+                        <input type="date" id="date-input" name="date" value="<%= today.toISOString().split('T')[0] %>" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
                       </div>
                       
                       <div class="form-time">
@@ -49,7 +49,6 @@
                 <%- include("../components/footer") %>
             </main>
 
-        <!-- <script src="/scripts/addChicken.js"></script> -->
         <script src="/scripts/orderTime.js"></script>
         <!-- <script src="/scripts/maxDate.js"></script> -->
 

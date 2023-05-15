@@ -6,21 +6,29 @@ const app = express()
 //Make a connection to the db
 const runDB = require('./config/db')
 runDB().then(console.log("connected to DB"))
-//require multer
-// const multer = require('multer')
+
+
+const { MongoClient, ServerApiVersion } = require('mongodb')
+
+const uri = (process.env.DB_URI)
+
+  // Create a MongoClient with a MongoClientOptions object to set the Stable API version
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverApi: ServerApiVersion.v1,
+  })
+
+const db = client.db(process.env.DB_NAME)
+
 // require body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
-
+// set port
+const port = process.env.PORT
 
 //Serve static files
 app.use(express.static('static'))
-
-// const path = require('path')
-// app.use('static', express.static(path.join(__dirname, 'public')))
-
-
-const port = process.env.PORT
 
 // Set ejs
 app.set('view engine', 'ejs')
@@ -38,19 +46,30 @@ app.get('/form', (req, res) => {
     res.render('pages/form')
 })
 
-app.post('/reserve', (req, res) => {
-    (console.log(req.body))
-    const today = new Date().toLocaleDateString('nl-NL', { weekday: 'long', day: 'numeric', month: 'long' });
-    console.log(today)
-    const reservations = {
-        chickens: req.body.chickens,
-        today: today
-    }
 
-    res.render('pages/admin', reservations)
+app.post('/reserve', async (req, res) => {
+    console.log(req.body);
+    
+    const reservations = {
+      name: req.body.name,
+      phone: req.body.phone,
+      chickens: req.body.chickens,
+      date: req.body.date,
+      time: req.body.time
+    }
+  
+    try {
+      await db.collection('reservations').insertOne(reservations)
+      res.render('pages/admin')
+    } catch (e) {
+      console.log(e);
+      res.status(500).send('Error: could not save reservation')
+    }
   })
+  
+
 
 //Set server to listen to port 
 app.listen(port, () => {
-    console.log(`Example app listening on  http://localhost:${port}`);
-  });
+    console.log(`Example app listening on  http://localhost:${port}`)
+  })

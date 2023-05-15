@@ -15,8 +15,10 @@
       url(../fonts/Lato-Bold.woff2) format("woff2");
 }
 
-html{
-  font-family: "roboto", "lato", Arial, Helvetica, sans-serif;
+
+body{
+  margin: 0;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
   background-color: var(--color-bg);
 }
 
@@ -37,7 +39,11 @@ h1 {
 /* header */
 
 header {
+  display: flex;
   position: fixed;
+  width: 100%;
+  top: 0;
+  height: 2rem;
   background-color: var(--color-primary);
 }
 .menu-icon {
@@ -46,4 +52,5 @@ header {
   background-color: var(--color-bg);
   margin: 0.25em 0;
 }   
+
 

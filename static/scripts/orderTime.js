@@ -1,4 +1,3 @@
-// Get the select element
 const select = document.querySelector('#time-input');
 
 // Define the available times
