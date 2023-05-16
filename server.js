@@ -36,20 +36,42 @@ app.set('view engine', 'ejs')
 
 //Pages
 // Home page 
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     console.log("Welcome to the homepage")
+    try {
     res.render('pages/home')
+    } catch (err) {
+      next(err);
+    }
 })
 // Form page
-app.get('/form', (req, res) => {
+app.get('/form', async (req, res, next) => {
     console.log("Welcome to the formpage")
+    try {
     res.render('pages/form')
+    } catch (err) {
+      next(err);
+    }
+})
+// Admin page
+app.get('/admin', async (req, res, next) => {
+    console.log("Welcome to the admin page")
+
+    try {
+    const chickens = await db.collection('chickens').find().toArray()
+    res.render('pages/admin', {chickens: chickens})
+    console.log(chickens)
+  } catch (err) {
+    next(err);
+  }
+
 })
 
 
-app.post('/reserve', async (req, res) => {
+app.post('/reserve', async (req, res, next) => {
     console.log(req.body);
-    
+
+    try {
     const reservations = {
       name: req.body.name,
       phone: req.body.phone,
@@ -57,13 +79,10 @@ app.post('/reserve', async (req, res) => {
       date: req.body.date,
       time: req.body.time
     }
-  
-    try {
       await db.collection('reservations').insertOne(reservations)
-      res.render('pages/admin')
-    } catch (e) {
-      console.log(e);
-      res.status(500).send('Error: could not save reservation')
+      res.render('pages/admin', reservations)
+    } catch (err) {
+      next(err);
     }
   })
   
