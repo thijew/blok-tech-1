@@ -59,7 +59,7 @@ app.get('/admin', async (req, res, next) => {
 
     try {
     const chickens = await db.collection('chickens').find().toArray()
-    res.render('pages/admin', {chickens: chickens})
+    res.render('pages/admin', { chickens: chickens })
     console.log(chickens)
   } catch (err) {
     next(err);
@@ -67,7 +67,7 @@ app.get('/admin', async (req, res, next) => {
 
 })
 
-
+//Post the form information
 app.post('/reserve', async (req, res, next) => {
     console.log(req.body);
 

@@ -15,18 +15,26 @@
                             <% const date = new Date(); %>
                             <% date.setDate(date.getDate() + i); %>
                             <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long', month: 'long', day: 'numeric' }) %></li>
-                            <!-- <li>WEATHER API</li> -->
+
                             <!-- <li>Reserveringen: </li> -->
                           <% } %>
-
-
                     </ul>
                 </div>
+
+                <div class="weatherApi">
+                    <ul>    
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>    
+                </div>
+
+                
             </main>
 
             <%- include("../components/footer"); %>
 
-                
+            <script src="/scripts/weatherApi.js"></script>
     </body>
 
 </html>
