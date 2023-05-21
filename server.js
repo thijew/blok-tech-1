@@ -36,7 +36,7 @@ app.set('view engine', 'ejs')
 
 //Pages
 // Home page 
-app.get('/', (req, res, next) => {
+app.get('/home', (req, res, next) => {
     console.log("Welcome to the homepage")
     try {
     res.render('pages/home')

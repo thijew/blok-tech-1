@@ -23,10 +23,8 @@
 
 
 
+
 /* basic code */
-
-
-
 body{
   display: flex;
   flex-direction: column;
@@ -57,8 +55,11 @@ h1 {
   width: 100%;
 }
 
-/* inputs styling */
 
+
+
+
+/* inputs styling */
 input[type="submit"] {
   background-color: var(--color-primary);
   color: var(--color-text);
@@ -69,8 +70,9 @@ input[type="submit"] {
 }
 
 
-/* header and footer */
 
+
+/* header and footer */
 header {
   font-family: var(--font-head);
   display: flex;
@@ -79,7 +81,6 @@ header {
   top: 0;
   height: 3rem;
   background-color: var(--color-primary);
-
 }
 
 footer {
@@ -97,6 +98,7 @@ footer nav{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
   width: 100%;
 
 }
@@ -107,8 +109,12 @@ footer nav a {
 }
 
 
-/* Form */
 
+
+
+
+
+/* Form */
 main form {
   width: 100%;
   display: flex;
@@ -153,6 +159,23 @@ main form div input::placeholder,
   justify-content: center;
 }
 
+
+
+
+/* Homepage container */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 0.72rem 0;
+}
+
+.container p { 
+  margin: 0 1rem 0  0.72rem;
+
+}
 
 
 
