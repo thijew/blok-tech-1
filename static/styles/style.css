@@ -196,10 +196,13 @@ main form div input::placeholder,
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  text-align: left;
+  align-items: center
 }
 
 .left {
-  flex: 1;
+  position: relative;
+  margin-right: 1rem; 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -207,12 +210,13 @@ main form div input::placeholder,
 
 }
 
-.weather {
-  flex: 2;
+.right {
+  position: relative;
+  margin-left: 1rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  flex-wrap: wrap;
+
 }
 
 .weather p {
