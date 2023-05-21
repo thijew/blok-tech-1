@@ -11,7 +11,7 @@
 :root {
   /* colors */
   --color-primary: #432818;
-  --color-secondary: #99582A;
+  --color-secondary: #99282A;
   --color-bg: #ffe6a7;
   --color-text: #e1aa28;
   --color-input: #D17E42;
@@ -30,6 +30,7 @@
 body{
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
@@ -39,6 +40,7 @@ body{
 }
 
 main {
+  width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -49,10 +51,10 @@ main {
 
 h1 {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-head);
-  margin: 1rem;
+  width: 100%;
 }
 
 /* inputs styling */
@@ -61,8 +63,9 @@ input[type="submit"] {
   background-color: var(--color-primary);
   color: var(--color-text);
   font-family: var(--font-head);
-  margin: 1rem;
-  padding: 1rem;
+  margin: 1.2rem 2.5rem 1.2rem;
+  padding: 1.2rem 2.5rem 1.2rem;
+  font-size: 1.2rem;
 }
 
 
@@ -107,24 +110,21 @@ footer nav a {
 /* Form */
 
 main form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  align-items: flex-start;
-  justify-content: flex-start;
-  
-  
-
-  /* left: 1.67rem;
-  margin: 0 0.75rem 0.75rem; */
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.72rem 0.72rem;
+  gap: 0.2rem;
 }
 
 main form div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -135,10 +135,11 @@ main form div input::placeholder,
   background-color: var(--color-input);
   color: var(--color-primary);
   border: none;
-  gap: 5;
+  gap: 2;
 }
 
 .formSubmit {
+  width: 100%;
   display: flex;
   justify-content: center;  
   align-items: center;
@@ -150,8 +151,6 @@ main form div input::placeholder,
   display: flex;
   align-items: center;
   justify-content: center;
-  
-
 }
 
 
