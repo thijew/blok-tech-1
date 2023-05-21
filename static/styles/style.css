@@ -2,9 +2,9 @@
 
 @font-face {
   font-family: "Roboto-Regular", "Lato-Bold";
-  src: 
-      url(../fonts/Roboto-Regular.woff2) format("woff2"), 
-      url(../fonts/Lato-Bold.woff2) format("woff2");
+  src:
+    url(../fonts/Roboto-Regular.woff2) format("woff2"),
+    url(../fonts/Lato-Bold.woff2) format("woff2");
 }
 
 /* Root */
@@ -18,14 +18,14 @@
 
   /* fonts */
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
-  --font-head: "Lato-Bold", Arial, Helvetica, sans-serif; 
+  --font-head: "Lato-Bold", Arial, Helvetica, sans-serif;
 }
 
 
 
 
 /* basic code */
-body{
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,6 +53,13 @@ h1 {
   justify-content: center;
   font-family: var(--font-head);
   width: 100%;
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--color-primary);
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -91,10 +98,11 @@ footer {
   bottom: 0;
   height: 2rem;
   background-color: var(--color-primary);
-  
+
 }
+
 header nav,
-footer nav{
+footer nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -102,6 +110,7 @@ footer nav{
   width: 100%;
 
 }
+
 header nav a,
 footer nav a {
   color: var(--color-text);
@@ -150,7 +159,7 @@ main form div input::placeholder,
 .formSubmit {
   width: 100%;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
 
 }
@@ -175,39 +184,37 @@ main form div input::placeholder,
   margin: 0 0.72rem 0;
 }
 
-.container p { 
+.container p {
   margin: 0 1rem 0 0.72rem;
 }
 
 
 
-
 /* Admin page */
-
-.reserveDay {
-  display: grid;
-  grid-template-columns: 5fr repeat(4, auto);
-  grid-template-rows: repeat(14, auto);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+.adminContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-
-.reserveDay li {
-  list-style: none;
-}
-
-.reserveDay li:nth-of-type(2) {
-  background-color: red;
-  grid-row-start: 2;
-}
-
-.weatherCode {
- background-color: red;
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
 
 }
 
+.weather {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 
-
-
-
+.weather p {
+  flex-basis: 50%;
+}
