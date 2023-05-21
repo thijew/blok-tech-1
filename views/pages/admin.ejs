@@ -9,25 +9,19 @@
             <main>
                 <h1>Reserveringen</h1>
 
-                <div class="reserve-day">
-                    <ul>
+                    <ul class="reserveDay">
                         <% for (let i = 0; i < 7; i++) { %>
-                            <% const date = new Date(); %>
-                            <% date.setDate(date.getDate() + i); %>
+                            <% const date = new Date()%>
+                            <% date.setDate(date.getDate() + i) %>
                             <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long', month: 'long', day: 'numeric' }) %></li>
 
                             <li>Reserveringen: <%= chickens.chickens  %></li>
+
+                            <li class="weatherCode"> <%= weather.daily.weathercode[0] %> </li>
+                            <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C Tot <%- weather.daily.temperature_2m_max[0] + i %> °C</li>
+                            <li class="weatherRain">Regen: <%- weather.daily.rain_sum[0] + i %> mm</li>
                           <% } %>
                     </ul>
-                </div>
-
-                <div class="weatherApi">
-                    <ul>
-                        <li>Hoog: <%- weather.daily.temperature_2m_max %> °C</li>
-                        <li>Laag: <%- weather.daily.temperature_2m_min %> °C</li>
-                        <li>Regenval: <%- weather.daily.rain_sum %> mm</li>
-                    </ul>
-                </div>
 
             </main>
 

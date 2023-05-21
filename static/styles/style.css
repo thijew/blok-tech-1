@@ -34,7 +34,7 @@ body{
   font-family: var(--font-body);
   background-color: var(--color-bg);
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 main {
@@ -44,7 +44,7 @@ main {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 3em;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h1 {
@@ -113,7 +113,6 @@ footer nav a {
 
 
 
-
 /* Form */
 main form {
   width: 100%;
@@ -142,6 +141,10 @@ main form div input::placeholder,
   color: var(--color-primary);
   border: none;
   gap: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
 }
 
 .formSubmit {
@@ -173,11 +176,36 @@ main form div input::placeholder,
 }
 
 .container p { 
-  margin: 0 1rem 0  0.72rem;
-
+  margin: 0 1rem 0 0.72rem;
 }
 
 
+
+
+/* Admin page */
+
+.reserveDay {
+  display: grid;
+  grid-template-columns: 5fr repeat(4, auto);
+  grid-template-rows: repeat(14, auto);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+
+.reserveDay li {
+  list-style: none;
+}
+
+.reserveDay li:nth-of-type(2) {
+  background-color: red;
+  grid-row-start: 2;
+}
+
+.weatherCode {
+ background-color: red;
+
+}
 
 
 
