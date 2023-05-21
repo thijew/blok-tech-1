@@ -11,22 +11,22 @@
                 <h1>Reserveer uw halve kip</h1>
                 <form action=/reserve method=post>
                   
-                    <div class="form-name">
+                    <div class="formName">
                         <label>Wat is uw naam?</label>
                         <input type="text" id="name" name="name" placeholder="Uw naam" required>
                     </div>
 
-                    <div class="form-phone">
+                    <div class="formPhone">
                       <label>Wat is uw telefoon nummer?</label>
                       <input type="tel" id="phone" name="phone" placeholder="+31612345678" required>
                     </div>
 
-                    <div class="form-chickens">
+                    <div class="formChickens">
                         <label>Hoeveel halve kippen wilt u reserveren? </label>
                         <input type="number" id="chickens" name="chickens" placeholder="0" min="0" max="20" required/>
                       </div>
                     
-                      <div class="form-date">
+                      <div class="formDate">
                         <label for="date-input">Welke dag wilt u de halve kip reserveren?</label>
                         <!-- Set reservation to 7 days max -->
                         <% 
@@ -36,14 +36,16 @@
                         <input type="date" id="date-input" name="date" value="<%= today.toISOString().split('T')[0] %>" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
                       </div>
                       
-                      <div class="form-time">
+                      <div class="formTime">
                         <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
-                        <select id="time-input" name="time" required>
+                        <select id="time-input" name="time" required></select>
                       </div>
 
-                      <div class="submit-button">
-                        <input type="submit" value="Reserveer">
+                      <div class="formSubmit">
+                        <input class="submitButton" type="submit" value="Reserveer" required>
                       </div>
+
+
                       
                 </form>
                 <%- include("../components/footer") %>
