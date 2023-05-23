@@ -58,11 +58,15 @@ app.get('/admin', async (req, res, next) => {
     console.log("Welcome to the admin page")
 
     try {
-    const date = "2023-05-22"
-    const reservations = await db.collection('reservations').find({date: date}).toArray()
-    console.log(reservations)
-    const totalChickens = await db.collection('reservations').find({chickens:}).toArray()
-    console.log(totalChickens)
+    const reservations = await db.collection('reservations').find().toArray()
+    // console.log(reservations)
+    const reservationDate = await reservations.filter(day => {
+      
+      return day.date == '2023-05-23'
+    })
+    console.log(reservationDate)
+    const chickens = await reservations.map(chickensToday => `{chickensToday.chickens}` )
+    console.log(chickens)
 
 
     const url = "https://api.open-meteo.com/v1/forecast?latitude=52.56&longitude=4.61&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum&timezone=Europe%2FBerlin"
@@ -70,8 +74,8 @@ app.get('/admin', async (req, res, next) => {
     let weather = await response.json();
     // console.log(weather);
 
-    res.render('pages/admin', { weather, reservations, totalChickens })
-    console.log({weather, reservations, totalChickens})
+    res.render('pages/admin', { weather, reservations })
+    // console.log({weather, reservations, totalChickens})
   } catch (err) {
     next(err);
   }

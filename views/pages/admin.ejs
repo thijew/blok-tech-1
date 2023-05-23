@@ -6,18 +6,19 @@
     <body>
         <%- include("../components/header"); %>
 
-            <main class="adminContainer">
+            <main>
                 <h1>Reserveringen</h1>
+                <div class="adminContainer">
                 <div class="left">
                     <% for (let i=0; i < 7; i++) { %>
                         <% const date=new Date()%>
                             <% date.setDate(date.getDate() + i) %>
                                 <ul class="leftContainer">
-                                    <li>
+                                    <li class="day">
                                         <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' ,
                                             day: 'numeric' }) %>
                                     </li>
-                                    <li>Reserveringen: <%= chickens.chickens %>
+                                    <li class="reservations">Reserveringen: <%= reservations.chickens %>
                                     </li>
                                 </ul>
                                 <% } %>
@@ -35,6 +36,7 @@
                         </ul>
                         <% } %>
                 </div>
+            </div>
 
 
             </main>
