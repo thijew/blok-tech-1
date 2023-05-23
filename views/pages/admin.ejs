@@ -12,26 +12,30 @@
                     <% for (let i=0; i < 7; i++) { %>
                         <% const date=new Date()%>
                             <% date.setDate(date.getDate() + i) %>
-                                <p>
-                                    <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' ,
-                                        day: 'numeric' }) %>
-                                </p>
-                                <p>Reserveringen: <%= chickens.chickens %>
-                                </p>
+                                <ul class="leftContainer">
+                                    <li>
+                                        <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' ,
+                                            day: 'numeric' }) %>
+                                    </li>
+                                    <li>Reserveringen: <%= chickens.chickens %>
+                                    </li>
+                                </ul>
                                 <% } %>
                 </div>
 
                 <div class="right">
                     <% for (let i=0; i < 7; i++) { %>
-                        <p class="weatherCode">
-                            <%= weather.daily.weathercode[0] %>
-                        </p>
-                        <p class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C Tot <%-
-                                    weather.daily.temperature_2m_max[0] + i %> °C</p>
-                        <p class="weatherRain">Regen: <%- weather.daily.rain_sum[0] + i %> mm</p>
+                        <ul class="rightContainer">
+                            <li class="weatherCode">
+                                <%= weather.daily.weathercode[0] + i %>
+                            </li>
+                            <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
+                                        weather.daily.temperature_2m_max[0] + i %> °C</li>
+                            <li class="weatherRain">Regen: <%- weather.daily.rain_sum[0] + i %> mm</li>
+                        </ul>
                         <% } %>
                 </div>
-                </div>
+
 
             </main>
 

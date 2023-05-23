@@ -34,7 +34,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
   height: 100vh;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 main {
@@ -44,7 +44,7 @@ main {
   justify-content: center;
   flex-direction: column;
   margin-bottom: 3em;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 h1 {
@@ -197,28 +197,36 @@ main form div input::placeholder,
   flex-direction: row;
   flex-wrap: wrap;
   text-align: left;
-  align-items: center
+  align-items: baseline;
 }
 
 .left {
   position: relative;
-  margin-right: 1rem; 
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-
+  justify-content: flex-start;
+  flex-basis: 40%;
 }
 
-.right {
+.leftContainer {
   position: relative;
-  margin-left: 1rem;
+  margin-left: 1rem; 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-
-}
-
-.weather p {
   flex-basis: 50%;
+  list-style-type: none;
+  padding: 0;
 }
+
+.rightContainer {
+  position: relative;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  list-style-type: none;
+  padding: 0;
+}
+
