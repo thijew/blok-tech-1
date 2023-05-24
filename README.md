@@ -1,4 +1,4 @@
-!['t kippaleis](/blok-tech-1.wiki/images/kippaleis.jpeg)
+!['t kippaleis](./blok-tech-1.wiki/images/kippaleis.jpeg)
 
 # Blok-Tech
 
