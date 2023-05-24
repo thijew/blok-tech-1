@@ -63,35 +63,30 @@ app.get('/admin', async (req, res, next) => {
     // filter reservations by date
     const reservationDate = reservations.filter(day => {
 
-      return day.date == '2023-05-23'
+      return day.date 
     })
-
     console.log(reservationDate)
+
     // Get an array of the all the chicken reservations for the day
     const chickenReservations = reservationDate.map(totalChickens => {
       return totalChickens.chickens
     })
-    console.log(chickenReservations)
+
     // Count up the array of chickens
     const totalChickenReservations = chickenReservations.reduce((chickenReservations, chickens) => {
       return chickenReservations + parseInt(chickens);
     }, 0);
-    
     console.log(totalChickenReservations);
-
 
     // Get the weather API
     const url = "https://api.open-meteo.com/v1/forecast?latitude=52.56&longitude=4.61&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum&timezone=Europe%2FBerlin"
     let response = await fetch(url);
     let weather = await response.json();
-    // console.log(weather);
 
     res.render('pages/admin', { weather, reservations, totalChickenReservations })
-    // console.log({weather, reservations, totalChickens})
   } catch (err) {
     next(err);
   }
-
 })
 
 //Post the form information
@@ -113,8 +108,6 @@ app.post('/reserve', async (req, res, next) => {
     }
   })
   
-
-
 //Set server to listen to port 
 app.listen(port, () => {
     console.log(`Example app listening on  http://localhost:${port}`)
