@@ -58,23 +58,35 @@ app.get('/admin', async (req, res, next) => {
     console.log("Welcome to the admin page")
 
     try {
+    //Get all data from the db 
     const reservations = await db.collection('reservations').find().toArray()
-    // console.log(reservations)
-    const reservationDate = await reservations.filter(day => {
-      
+    // filter reservations by date
+    const reservationDate = reservations.filter(day => {
+
       return day.date == '2023-05-23'
     })
+
     console.log(reservationDate)
-    const chickens = await reservations.map(chickensToday => `{chickensToday.chickens}` )
-    console.log(chickens)
+    // Get an array of the all the chicken reservations for the day
+    const chickenReservations = reservationDate.map(totalChickens => {
+      return totalChickens.chickens
+    })
+    console.log(chickenReservations)
+    // Count up the array of chickens
+    const totalChickenReservations = chickenReservations.reduce((chickenReservations, chickens) => {
+      return chickenReservations + parseInt(chickens);
+    }, 0);
+    
+    console.log(totalChickenReservations);
 
 
+    // Get the weather API
     const url = "https://api.open-meteo.com/v1/forecast?latitude=52.56&longitude=4.61&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum&timezone=Europe%2FBerlin"
     let response = await fetch(url);
     let weather = await response.json();
     // console.log(weather);
 
-    res.render('pages/admin', { weather, reservations })
+    res.render('pages/admin', { weather, reservations, totalChickenReservations })
     // console.log({weather, reservations, totalChickens})
   } catch (err) {
     next(err);

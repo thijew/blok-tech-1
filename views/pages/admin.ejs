@@ -18,7 +18,7 @@
                                         <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' ,
                                             day: 'numeric' }) %>
                                     </li>
-                                    <li class="reservations">Reserveringen: <%= reservations.chickens %>
+                                    <li class="reservations">Reserveringen: <%= totalChickenReservations %>
                                     </li>
                                 </ul>
                                 <% } %>
@@ -43,7 +43,7 @@
 
             <%- include("../components/footer"); %>
 
-                <!-- <script src="/scripts/weather-api.js"></script> -->
+
     </body>
 
 </html>
