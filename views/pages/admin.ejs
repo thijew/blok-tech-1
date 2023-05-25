@@ -28,11 +28,11 @@
                     <% for (let i=0; i < 7; i++) { %>
                         <ul class="rightContainer">
                             <li class="weatherCode">
-                                <%= weather.daily.weathercode[0] + i %>
+                                <%= weather.daily.weathercode[i] %>
                             </li>
                             <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
                                         weather.daily.temperature_2m_max[0] + i %> °C</li>
-                            <li class="weatherRain">Regen: <%- weather.daily.rain_sum[0] + i %> mm</li>
+                            <li class="weatherRain">Regen: <%- weather.daily.rain_sum[i] %> mm</li>
                         </ul>
                         <% } %>
                 </div>
@@ -43,6 +43,7 @@
 
             <%- include("../components/footer"); %>
 
+            <script src="scripts/weather-code"></script>
 
     </body>
 

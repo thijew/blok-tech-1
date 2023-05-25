@@ -67,7 +67,7 @@ app.get('/admin', async (req, res, next) => {
     })
     console.log(reservationDate)
 
-    // Get an array of the all the chicken reservations for the day
+    // Get an array of all the chicken reservations for the day
     const chickenReservations = reservationDate.map(totalChickens => {
       return totalChickens.chickens
     })
@@ -82,6 +82,7 @@ app.get('/admin', async (req, res, next) => {
     const url = "https://api.open-meteo.com/v1/forecast?latitude=52.56&longitude=4.61&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum&timezone=Europe%2FBerlin"
     let response = await fetch(url);
     let weather = await response.json();
+    console.log(weather)
 
     res.render('pages/admin', { weather, reservations, totalChickenReservations })
   } catch (err) {
