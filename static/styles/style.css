@@ -178,7 +178,6 @@ main form div input::placeholder,
 
 /* Homepage container */
 .container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -195,63 +194,68 @@ main form div input::placeholder,
 /* Admin page */
 .adminContainer {
   --column-count: 2;
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: left;
-  align-items: baseline;
-  align-content: center; */
+  --template-rows: 2;
   display: grid;
   grid-template-columns: repeat(var(--column-count), 1fr);
-  align-items: center;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  align-items: start;
+  gap: 1rem;
+  overflow: scroll;
 }
 
-.left {
-  /* position: relative;
+.adminContainer h1 {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  flex-basis: 40%; */
+  position: relative;
+  margin: 1rem;
+}
+
+
+.left {
+  height: auto;
   display: grid;
+  align-items: center;
+  --template-rows: 2;
+  grid-template-rows: repeat(var(--template-rows), 1fr);
+  gap: 1rem;
+
 
 }
 
 .leftContainer {
-  --column-count: 1;
+  --column-count: 2;
   --template-rows: 2;
-  /* position: relative;
-  margin-left: 1rem; 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-basis: 50%;
-  list-style-type: none;
-  padding: 0; */
   display: grid;
   grid-template-columns: repeat(var(--column-count, 1fr));
   grid-template-rows: repeat(var(--template-rows), 1fr);
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .right {
-  /* height: 100dvh;
-  display: flex;
-  flex-basis: 50%;
-  list-style-type: none;
-  flex-direction: column; */
+  height: auto;
   display: grid;
+  align-items: center;
+
 }
 
 .rightContainer {
-  --column-count: 4;
-
+  --template-rows: 2;
+  --column-count: 2;
   display: grid;
-  grid-template-columns: repeat(var(--column-count, 1fr));
-
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  grid-template-rows: repeat(var(--template-rows), 1fr);
   list-style-type: none;
+  justify-items: start;
+  margin: 0;
+  padding: 0;
+
   }
 
   .weatherTemp {
-    grid-area: 2 / 1 / 2 / 2;
+    grid-area: 2 / -3 / -2 / -1;
   }
+
+
 

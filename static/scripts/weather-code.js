@@ -10,7 +10,10 @@
             case 0:
                 icon.innerHTML = '<img src="/images/wc-0.png" alt="Weather Icon">';
                 break;
-            case 1,2:
+            case 1:
+                icon.innerHTML = '<img src="/images/wc-1.png" alt="Weather Icon">';
+                break;
+            case 2:
                 icon.innerHTML = '<img src="/images/wc-1.png" alt="Weather Icon">';
                 break;
             case 3:
@@ -40,10 +43,8 @@
             case !null:
                 icon.innerHTML = '<img src="/images/wc-unknown.png" alt="Weather Icon">';
                 break;
-                
-
-            // Add cases for other weather codes and corresponding icons
             default:
+                icon.innerHTML = '<img src="/images/wc-unknown.png" alt="Weather Icon">';
                 break;
         }
     })

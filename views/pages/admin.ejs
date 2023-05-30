@@ -8,7 +8,7 @@
 
             <main>
                 <h1>Reserveringen</h1>
-                <div class="adminContainer">
+            <div class="adminContainer">
                 <div class="left">
                     <% for (let i=0; i < 7; i++) { %>
                         <% const date=new Date()%>
@@ -31,7 +31,7 @@
                                 <%= weather.daily.weathercode[i] %></li>
                             <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
                                         weather.daily.temperature_2m_max[0] + i %> °C</li>
-                            <li class="weatherRain">Regen: <%- weather.daily.rain_sum[i] %> mm</li>
+                            <li class="weatherRain"> <%- weather.daily.rain_sum[i] %> mm</li>
                         </ul>
                         <% } %>
                 </div>
