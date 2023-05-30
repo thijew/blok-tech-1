@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../components/head"); %>
+
+    <body>
+        <%- include("../components/header"); %>
+
+            <main>
+                <h1>Bedankt voor uw bestelling!</h1>
+                    <ul>
+                        <li>Een overzicht van uw bestelling</li>
+                        <li><%= reservations.name %></li>
+                        <li>Aantal halve kippen: <%= reservations.chickens %></li>
+                        <li>Datum: <%= reservations.date %></li>
+                        <li>Tijd: <%= reservations.time %></li>
+                    </ul>
+                <p>Wilt u uw bestelling aanpassen?</p>
+                <button>klik dan hier</button>
+            </main>
+
+            <%- include("../components/footer"); %>
+
+    </body>
+
+</html>

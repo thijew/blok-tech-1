@@ -89,6 +89,18 @@ app.get('/admin', async (req, res, next) => {
     next(err);
   }
 })
+  // Confirmation page
+  app.get('/confirmation', async (req, res, next) => {
+    console.log("Welcome to the confirmation page")
+
+    const reservations = await db.collection('reservations').findOne()
+    console.log(reservations)
+    try {
+      res.render('pages/confirmation', {reservations})
+      } catch (err) {
+        next(err);
+      }
+  })
 
 //Post the form information
 app.post('/reserve', async (req, res, next) => {
@@ -103,11 +115,12 @@ app.post('/reserve', async (req, res, next) => {
       time: req.body.time
     }
       await db.collection('reservations').insertOne(reservations)
-      res.render('pages/admin', reservations)
+      res.render('pages/confirmation', {reservations})
     } catch (err) {
       next(err);
     }
   })
+
   
 //Set server to listen to port 
 app.listen(port, () => {
