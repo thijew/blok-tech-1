@@ -20,8 +20,7 @@
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
   --font-head: "Lato-Bold", Arial, Helvetica, sans-serif;
 
-  /* elements */
-  --weather-container-height: 20rem
+
 }
 
 
@@ -32,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin: 0;
   padding: 0;
   font-family: var(--font-body);
@@ -55,6 +55,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   font-family: var(--font-head);
   width: 100%;
 }
@@ -64,7 +65,21 @@ p {
   color: var(--color-primary);
   margin: 0;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 
 
 
@@ -123,6 +138,23 @@ footer nav a {
 }
 
 
+/* Home page */
+
+
+.homeContainer {
+  height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 0.72rem 0;
+}
+
+.homeContainer p {
+  margin: 0 1rem 0 0.72rem;
+}
+
 
 
 
@@ -158,7 +190,6 @@ main form div input::placeholder,
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-
 }
 
 .formSubmit {
@@ -176,21 +207,6 @@ main form div input::placeholder,
   justify-content: center;
 }
 
-
-
-
-/* Homepage container */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0 0.72rem 0;
-}
-
-.container p {
-  margin: 0 1rem 0 0.72rem;
-}
 
 
 
@@ -212,7 +228,6 @@ main form div input::placeholder,
   display: grid;
 }
 
-
 .left {
   display: grid;
   align-items: center;
@@ -220,8 +235,6 @@ main form div input::placeholder,
   grid-template-rows: repeat(var(--template-rows), 1fr);
   gap: 1rem;
   align-items: center;
-
-
 }
 
 .leftContainer {
@@ -233,16 +246,12 @@ main form div input::placeholder,
   list-style-type: none;
   padding: 0;
   margin: 0;
-
 }
 
 .right {
   display: grid;
   align-items: center;
   height: var(--weather-container-height);
-
-
-
 }
 
 .rightContainer {
@@ -256,13 +265,20 @@ main form div input::placeholder,
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+.weatherTemp {
+  grid-area: 2 / -3 / -2 / -1;
+}
 
 
-  }
+/* 404 page */
 
-  .weatherTemp {
-    grid-area: 2 / -3 / -2 / -1;
-  }
+.errorPage {
+  display: flex;
 
+}
 
-
+.errorPage img {
+  width: 15rem;
+}

@@ -12,12 +12,12 @@ const { MongoClient, ServerApiVersion } = require('mongodb')
 
 const uri = (process.env.DB_URI)
 
-  // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-  const client = new MongoClient(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverApi: ServerApiVersion.v1,
-  })
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1,
+})
 
 const db = client.db(process.env.DB_NAME)
 
@@ -37,33 +37,33 @@ app.set('view engine', 'ejs')
 //Pages
 // Home page 
 app.get('/home', (req, res, next) => {
-    console.log("Welcome to the homepage")
-    try {
+  console.log("Welcome to the homepage")
+  try {
     res.render('pages/home')
-    } catch (err) {
-      next(err);
-    }
+  } catch (err) {
+    next(err);
+  }
 })
 // Form page
 app.get('/form', async (req, res, next) => {
-    console.log("Welcome to the formpage")
-    try {
+  console.log("Welcome to the formpage")
+  try {
     res.render('pages/form')
-    } catch (err) {
-      next(err);
-    }
+  } catch (err) {
+    next(err);
+  }
 })
 // Admin page
 app.get('/admin', async (req, res, next) => {
-    console.log("Welcome to the admin page")
+  console.log("Welcome to the admin page")
 
-    try {
+  try {
     //Get all data from the db 
     const reservations = await db.collection('reservations').find().toArray()
     // filter reservations by date
     const reservationDate = reservations.filter(day => {
 
-      return day.date 
+      return day.date
     })
     // console.log(reservationDate)
 
@@ -89,24 +89,24 @@ app.get('/admin', async (req, res, next) => {
     next(err);
   }
 })
-  // Confirmation page
-  app.get('/confirmation', async (req, res, next) => {
-    console.log("Welcome to the confirmation page")
+// Confirmation page
+app.get('/confirmation', async (req, res, next) => {
+  console.log("Welcome to the confirmation page")
 
-    const reservations = await db.collection('reservations').findOne()
-    console.log(reservations)
-    try {
-      res.render('pages/confirmation', {reservations})
-      } catch (err) {
-        next(err);
-      }
-  })
+  const reservations = await db.collection('reservations').findOne()
+  console.log(reservations)
+  try {
+    res.render('pages/confirmation', { reservations })
+  } catch (err) {
+    next(err);
+  }
+})
 
 //Post the form information
 app.post('/reserve', async (req, res, next) => {
-    console.log(req.body);
+  console.log(req.body);
 
-    try {
+  try {
     const reservations = {
       name: req.body.name,
       phone: req.body.phone,
@@ -114,15 +114,20 @@ app.post('/reserve', async (req, res, next) => {
       date: req.body.date,
       time: req.body.time
     }
-      await db.collection('reservations').insertOne(reservations)
-      res.render('pages/confirmation', {reservations})
-    } catch (err) {
-      next(err);
-    }
-  })
+    await db.collection('reservations').insertOne(reservations)
+    res.render('pages/confirmation', { reservations })
+  } catch (err) {
+    next(err);
+  }
+})
 
-  
+
 //Set server to listen to port 
 app.listen(port, () => {
-    console.log(`Example app listening on  http://localhost:${port}`)
-  })
+  console.log(`Example app listening on  http://localhost:${port}`)
+})
+
+// 404
+app.use((req, res) => {
+  res.status(404).render('pages/404');
+});
