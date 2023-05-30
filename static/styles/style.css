@@ -19,6 +19,9 @@
   /* fonts */
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
   --font-head: "Lato-Bold", Arial, Helvetica, sans-serif;
+
+  /* elements */
+  --weather-container-height: 20rem
 }
 
 
@@ -193,8 +196,9 @@ main form div input::placeholder,
 
 /* Admin page */
 .adminContainer {
+  height: 100%;
   --column-count: 2;
-  --template-rows: 2;
+  --template-rows: 4;
   display: grid;
   grid-template-columns: repeat(var(--column-count), 1fr);
   grid-template-columns: repeat(var(--column-count), 1fr);
@@ -204,20 +208,17 @@ main form div input::placeholder,
 }
 
 .adminContainer h1 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 1rem;
+  display: grid;
 }
 
 
 .left {
-  height: auto;
   display: grid;
   align-items: center;
   --template-rows: 2;
   grid-template-rows: repeat(var(--template-rows), 1fr);
   gap: 1rem;
+  align-items: center;
 
 
 }
@@ -231,12 +232,15 @@ main form div input::placeholder,
   list-style-type: none;
   padding: 0;
   margin: 0;
+
 }
 
 .right {
-  height: auto;
   display: grid;
   align-items: center;
+  height: var(--weather-container-height);
+
+
 
 }
 
@@ -250,6 +254,8 @@ main form div input::placeholder,
   justify-items: start;
   margin: 0;
   padding: 0;
+  height: 100%;
+
 
   }
 
