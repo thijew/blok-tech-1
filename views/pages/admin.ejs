@@ -10,45 +10,44 @@
                 <h1>Reserveringen</h1>
                 <ul class="adminContainer">
                     <li>
-                        <div class="left">
+                        <section class="left">
                             <% for (let i=0; i < 7; i++) { %>
                                 <% const date=new Date()%>
                                     <% date.setDate(date.getDate() + i) %>
-                                        <ul class="leftContainer">
-                                            <li class="day">
-                                                <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' ,
-                                                    day: 'numeric' }) %>
-                                            </li>
-                                            <li class="reservations">Reserveringen: <%= totalChickenReservations %>
-                                            </li>
-                                        </ul>
-                                        <% } %>
-                        </div>
-
-                        <div class="right">
-                            <% for (let i=0; i < 7; i++) { %>
-                                <ul class="rightContainer">
-                                    <li class="weatherCode">
-                                        <%= weather.daily.weathercode[i] %>
-                                    </li>
-                                    <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
-                                                weather.daily.temperature_2m_max[0] + i %> °C</li>
-                                    <% if (weather.daily.rain_sum[i]> 0) { %>
-                                        <li class="weatherRain">
-                                            <%- weather.daily.rain_sum[i] %> mm
-                                        </li>
-                                        <% } %>
-                                </ul>
-                                <% } %>
-                        </div>
+                    <li class="day">
+                        <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' , day: 'numeric' }) %>
+                    </li>
+                    <li class="reservations">Reserveringen: <%= totalChickenReservations %>
                     </li>
                 </ul>
+                <% } %>
+                    </section>
+
+                    <section class="right">
+                        <% for (let i=0; i < 7; i++) { %>
+                            <ul class="rightContainer">
+                                <li class="weatherCode">
+                                    <%= weather.daily.weathercode[i] %>
+                                </li>
+                                <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
+                                            weather.daily.temperature_2m_max[0] + i %> °C</li>
+                                <% if (weather.daily.rain_sum[i]> 0) { %>
+                                    <li class="weatherRain">
+                                        <%- weather.daily.rain_sum[i] %> mm
+                                    </li>
+                                    <% } %>
+                            </ul>
+                            <% } %>
+                    </section>
+                    </li>
+                    </ul>
 
 
             </main>
 
             <%- include("../components/footer"); %>
 
+                <script src="scripts/weather-api.js"></script>
                 <script src="scripts/weather-code.js"></script>
 
 

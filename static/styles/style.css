@@ -15,6 +15,8 @@
   --color-bg: #ffe6a7;
   --color-text: #e1aa28;
   --color-input: #D17E42;
+  --color-error: #FF0000;
+  --color-valid: #0FFF50;
 
   /* fonts */
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
@@ -22,7 +24,10 @@
 }
 
 
-
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /* basic code */
 body {
@@ -44,7 +49,7 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
   height: 100dvh;
 
 }
@@ -115,8 +120,8 @@ footer {
 
 }
 
-header nav,
-footer nav {
+header>nav,
+footer>nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -149,7 +154,7 @@ footer nav a {
 
 
 /* Form */
-main form {
+main>form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -160,23 +165,22 @@ main form {
   gap: 0.2rem;
 }
 
-main form fieldset {
+main>form fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: none;
-
 }
 
-main form fieldset input,
-main form fieldset input::placeholder,
+main>form fieldset input,
+main>form fieldset input::placeholder,
 #date-input,
 #time-input {
   background-color: var(--color-input);
   color: var(--color-primary);
   border: none;
-  gap: 2;
+
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -195,29 +199,42 @@ main form fieldset input::placeholder,
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
 }
+
+/* error handling */
+main>form fieldset input:invalid {
+  border: 1px solid var(--color-error);
+  background-color: var(--color-input);
+
+}
+
+main>form fieldset input:valid {
+  border: 1px solid var(--color-valid);
+  background-color: var(--color-input);
+}
+
+main>form fieldset input:required {
+  border: none;
+  background-color: var(--color-input);
+}
+
+
 
 
 
 
 /* Admin page */
 .adminContainer {
-  /* width: 100%;
-  height: 100%; */
   margin: 0;
   padding: 0;
   list-style-type: none;
-
-
   display: grid;
   gap: 1rem;
-  padding: 1em;
 }
 
 .adminContainer li {
-  display: grid;
 }
-
 
 .right {
   display: grid;
@@ -247,7 +264,6 @@ main form fieldset input::placeholder,
 
 .errorPage {
   display: flex;
-
 }
 
 .errorPage img {
