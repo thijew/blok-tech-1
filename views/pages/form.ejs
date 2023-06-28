@@ -3,55 +3,55 @@
 
 <%- include("../components/head") %>
 
-    <body>
-        <%- include("../components/header") %>
+  <body>
+    <%- include("../components/header") %>
 
-            <main>
-                
-                <h1>Reserveer uw halve kip</h1>
-                <form action=/reserve method=post>
-                  
-                    <div class="formName">
-                        <label>Wat is uw naam?</label>
-                        <input type="text" id="name" name="name" placeholder="Uw naam" required/>
-                    </div>
+      <main>
 
-                    <div class="formPhone">
-                      <label>Wat is uw telefoon nummer?</label>
-                      <input type="tel" inputmode="tel" id="phone" name="phone" placeholder="+31612345678" required/>
-                    </div>
+        <h1>Reserveer uw halve kip</h1>
+        <form action=/reserve method=post>
 
-                    <div class="formChickens">
-                        <label>Hoeveel halve kippen wilt u reserveren? </label>
-                        <input type="number" id="chickens" name="chickens" placeholder="0" min="0" max="20" required/>
-                      </div>
-                    
-                      <div class="formDate">
-                        <label for="date-input">Welke dag wilt u de halve kip reserveren?</label>
-                        <!-- Set reservation to 7 days max -->
-                        <% 
-                          const today = new Date();
-                          const maxDate = new Date(today.getTime() + (7 * 24 * 60 * 60 * 1000)).toISOString().split('T')[0];
-                        %>
-                        <input type="date" id="date-input" name="date" value="<%= today.toISOString().split('T')[0] %>" min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
-                      </div>
-                      
-                      <div class="formTime">
-                        <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
-                        <select id="time-input" name="time" required></select>
-                      </div>
+          <fieldset class="formName">
+            <label>Wat is uw naam?</label>
+            <input type="text" id="name" name="name" placeholder="Uw naam" required />
+          </fieldset>
 
-                      <div class="formSubmit">
-                        <input class="submitButton" type="submit" value="Reserveer" required>
-                      </div>
-                </form>
-            </main>
+          <fieldset class="formPhone">
+            <label>Wat is uw telefoon nummer?</label>
+            <input type="tel" inputmode="tel" id="phone" name="phone" placeholder="+31612345678" required />
+          </fieldset>
 
-            <%- include("../components/footer") %>
-            
+          <fieldset class="formChickens">
+            <label>Hoeveel halve kippen wilt u reserveren? </label>
+            <input type="number" id="chickens" name="chickens" placeholder="0" min="0" max="20" required />
+          </fieldset>
+
+          <fieldset class="formDate">
+            <label for="date-input">Welke dag wilt u de halve kip reserveren?</label>
+            <!-- Set reservation to 7 days max -->
+            <% const today=new Date(); const maxDate=new Date(today.getTime() + (7 * 24 * 60 * 60 *
+              1000)).toISOString().split('T')[0] %>
+              <input type="date" id="date-input" name="date" value="<%= today.toISOString().split('T')[0] %>"
+                min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
+          </fieldset>
+
+          <fieldset class="formTime">
+            <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
+            <select id="time-input" name="time" required></select>
+          </fieldset>
+
+          <fieldset class="formSubmit">
+            <input class="submitButton" type="submit" value="Reserveer" required>
+          </fieldset>
+        </form>
+
+      </main>
+
+      <%- include("../components/footer") %>
+
         <script src="/scripts/order-time.js"></script>
-        <!-- <script src="/scripts/maxDate.js"></script> -->
+        <script src="/scripts/form-validation.js"></script>
 
-    </body>
+  </body>
 
 </html>

@@ -19,8 +19,6 @@
   /* fonts */
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
   --font-head: "Lato-Bold", Arial, Helvetica, sans-serif;
-
-
 }
 
 
@@ -81,10 +79,6 @@ li {
 }
 
 
-
-
-
-
 /* inputs styling */
 input[type="submit"] {
   background-color: var(--color-primary);
@@ -139,8 +133,6 @@ footer nav a {
 
 
 /* Home page */
-
-
 .homeContainer {
   height: 80%;
   position: relative;
@@ -156,9 +148,6 @@ footer nav a {
 }
 
 
-
-
-
 /* Form */
 main form {
   width: 100%;
@@ -171,16 +160,17 @@ main form {
   gap: 0.2rem;
 }
 
-main form div {
+main form fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: none;
 
 }
 
-main form div input,
-main form div input::placeholder,
+main form fieldset input,
+main form fieldset input::placeholder,
 #date-input,
 #time-input {
   background-color: var(--color-input);
@@ -212,41 +202,22 @@ main form div input::placeholder,
 
 /* Admin page */
 .adminContainer {
-  position: relative;
-  height: 100%;
-  --column-count: 2;
-  --template-rows: 4;
-  display: grid;
-  grid-template-columns: repeat(var(--column-count), 1fr);
-  grid-template-rows: repeat(var(--column-count), 1fr);
-  align-items: start;
-  gap: 1rem;
-  overflow: scroll;
-}
-
-.adminContainer h1 {
-  display: grid;
-}
-
-.left {
-  display: grid;
-  align-items: center;
-  --template-rows: 2;
-  grid-template-rows: repeat(var(--template-rows), 1fr);
-  gap: 1rem;
-  align-items: center;
-}
-
-.leftContainer {
-  --column-count: 2;
-  --template-rows: 2;
-  display: grid;
-  grid-template-columns: repeat(var(--column-count, 1fr));
-  grid-template-rows: repeat(var(--template-rows), 1fr);
-  list-style-type: none;
-  padding: 0;
+  /* width: 100%;
+  height: 100%; */
   margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+
+  display: grid;
+  gap: 1rem;
+  padding: 1em;
 }
+
+.adminContainer li {
+  display: grid;
+}
+
 
 .right {
   display: grid;
