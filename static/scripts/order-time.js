@@ -16,5 +16,16 @@ for (let time = startTime; time <= endTime; time.setMinutes(time.getMinutes() + 
   timeInput.appendChild(option)
 }
 
-console.log('End time:', endTime)
+
+const maxDate = new Date(today.getTime() + (7 * 24 * 60 * 60 *
+  1000)).toISOString().split('T')[0]
+
+const todayStr = today.toISOString().split('T')[0]
+
+document.getElementById('date-input').setAttribute('max', maxDate);
+document.getElementById('date-input').setAttribute('min', todayStr);
+document.getElementById('date-input').setAttribute('value', todayStr);
+
+
+
 

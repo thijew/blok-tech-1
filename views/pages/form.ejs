@@ -29,11 +29,9 @@
           <fieldset class="formDate">
             <label for="date-input">Welke dag wilt u de halve kip reserveren?</label>
             <!-- Set reservation to 7 days max -->
-            <% const today=new Date(); const maxDate=new Date(today.getTime() + (7 * 24 * 60 * 60 *
-              1000)).toISOString().split('T')[0] %>
-              <input type="date" id="date-input" name="date" value="<%= today.toISOString().split('T')[0] %>"
-                min="<%= today.toISOString().split('T')[0] %>" max="<%= maxDate %>" required>
+            <input type="date" id="date-input" name="date" required>
           </fieldset>
+          
 
           <fieldset class="formTime">
             <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
@@ -51,6 +49,7 @@
 
         <script src="/scripts/order-time.js"></script>
         <script src="/scripts/form-validation.js"></script>
+        <script src="/scripts/maxDate.js"></script>
 
   </body>
 
