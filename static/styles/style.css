@@ -216,10 +216,6 @@ main>form fieldset input:required {
   grid-template-columns: 1fr 1fr;
 }
 
- .adminContainer li {
-  display: grid;
-  grid-template-columns: 1f 1fr;
- }
 
 /* .right {
   display: grid;

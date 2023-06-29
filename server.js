@@ -62,7 +62,6 @@ app.get('/admin', async (req, res, next) => {
     const reservations = await db.collection('reservations').find().toArray()
     // filter reservations by date
     const reservationDate = reservations.filter(day => {
-
       return day.date
     })
     // console.log(reservationDate)
@@ -75,10 +74,6 @@ app.get('/admin', async (req, res, next) => {
       return total + parseInt(chickens);
     }, 0);
 
-    console.log(totalChickenReservations);
-
-    // console.log(totalChickenReservations)
-
     // Get the weather API
     const url = "https://api.open-meteo.com/v1/forecast?latitude=52.56&longitude=4.61&daily=weathercode,temperature_2m_max,temperature_2m_min,rain_sum&timezone=Europe%2FBerlin"
     let response = await fetch(url);
@@ -90,18 +85,7 @@ app.get('/admin', async (req, res, next) => {
     next(err);
   }
 })
-// Confirmation page
-app.get('/confirmation', async (req, res, next) => {
-  console.log("Welcome to the confirmation page")
 
-  const reservations = await db.collection('reservations').findOne()
-  console.log(reservations)
-  try {
-    res.render('pages/confirmation', { reservations })
-  } catch (err) {
-    next(err);
-  }
-})
 
 //Post the form information
 app.post('/reserve', async (req, res, next) => {
@@ -116,6 +100,19 @@ app.post('/reserve', async (req, res, next) => {
       time: req.body.time
     }
     await db.collection('reservations').insertOne(reservations)
+    res.render('pages/confirmation', { reservations })
+  } catch (err) {
+    next(err);
+  }
+})
+
+// Confirmation page
+app.get('/confirmation', async (req, res, next) => {
+  console.log("Welcome to the confirmation page")
+
+  const reservations = await db.collection('reservations').findOne()
+  console.log(reservations)
+  try {
     res.render('pages/confirmation', { reservations })
   } catch (err) {
     next(err);

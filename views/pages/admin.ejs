@@ -15,12 +15,16 @@
                     <% for (let i=0; i < 7; i++) { %>
                         <% const date=new Date()%>
                             <% date.setDate(date.getDate() + i) %>
-                                <li class="left"><%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' , day: 'numeric' }) %></li>
-                                <li class="left">Reserveringen: <%= totalChickenReservations %></li>
-                                <li class="right"><%= weather.daily.weathercode[i] %></li>
-                                <li class="right"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-weather.daily.temperature_2m_max[0] + i %> °C</li>
+                            <ul class="left">
+                                <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' , day: 'numeric' }) %></li>
+                                <li>Reserveringen: <%= totalChickenReservations %></li>
+                            </ul>
+                            <ul class="right">
+                                <li><%= weather.daily.weathercode[i] %></li>
+                                <li><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-weather.daily.temperature_2m_max[0] + i %> °C</li>
                                 <% if (weather.daily.rain_sum[i]> 0) { %>
-                                <li class="right"><%- weather.daily.rain_sum[i] %> mm</li><% } %>
+                                <li><%- weather.daily.rain_sum[i] %> mm</li><% } %>
+                            </ul>
                         <% } %>
                 </ul>
 
