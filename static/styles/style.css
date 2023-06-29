@@ -48,6 +48,7 @@ main {
   flex-direction: column;
   margin-bottom: 3rem;
   height: 100dvh;
+  
 }
 
 h1 {
@@ -81,7 +82,7 @@ li {
 
 /* inputs styling */
 input[type="submit"] {
-  background-color: var(--color-primary);
+  background-color: var(--color-secondary);
   color: var(--color-text);
   font-family: var(--font-head);
   margin: 1.2rem 2.5rem 1.2rem;
@@ -142,7 +143,7 @@ footer nav a {
 }
 
 /* Form */
-main>form {
+main form {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -153,7 +154,7 @@ main>form {
   gap: 0.2rem;
 }
 
-main>form fieldset {
+fieldset {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,14 +162,13 @@ main>form fieldset {
   border: none;
 }
 
-main>form fieldset input,
-main>form fieldset input::placeholder,
-#date-input,
-#time-input {
+main form fieldset input,
+main form fieldset input::placeholder,
+main form fieldset select {
   background-color: var(--color-input);
   color: var(--color-primary);
+  font-family: var(--font-body);
   border: none;
-
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -181,8 +181,8 @@ main>form fieldset input::placeholder,
   align-items: center;
 }
 
-.submitButton {
-  position: relative;
+#submitButton {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,17 +190,20 @@ main>form fieldset input::placeholder,
 }
 
 /* error handling */
-main>form fieldset input:invalid {
+main form fieldset input:invalid,
+main form fieldset select:invalid {
   border: 1px solid var(--color-error);
   background-color: var(--color-input);
 }
 
-main>form fieldset input:valid {
+main form fieldset input:valid,
+main form fieldset select:invalid {
   border: 1px solid var(--color-valid);
   background-color: var(--color-input);
 }
 
-main>form fieldset input:required {
+main form fieldset input:required,
+main form fieldset select:required {
   border: none;
   background-color: var(--color-input);
 }
@@ -220,30 +223,6 @@ main>form fieldset input:required {
   align-items: center;
 }
 
-
-/* .right {
-  display: grid;
-  align-items: center;
-  height: var(--weather-container-height);
-}
-
-.rightContainer {
-  --template-rows: 2;
-  --column-count: 2;
-  display: grid;
-  grid-template-columns: repeat(var(--column-count), 1fr);
-  grid-template-rows: repeat(var(--template-rows), 1fr);
-  list-style-type: none;
-  justify-items: start;
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-.weatherTemp {
-  grid-area: 2 / -3 / -2 / -1;
-}
- */
 
 /* 404 page */
 
