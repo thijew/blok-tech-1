@@ -82,12 +82,17 @@ li {
 
 /* inputs styling */
 input[type="submit"] {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
   color: var(--color-text);
   font-family: var(--font-head);
   margin: 1.2rem 2.5rem 1.2rem;
   padding: 1.2rem 2.5rem 1.2rem;
   font-size: 1.2rem;
+  border: none !important;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
 }
 
 /* header and footer */
@@ -123,8 +128,17 @@ footer>nav {
 
 header nav a,
 footer nav a {
+  width: stretch;
   color: var(--color-text);
   text-decoration: none;
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+
+  &:active {
+    background-color: var(--color-bg);
+  }
 }
 
 /* Home page */
@@ -178,30 +192,32 @@ fieldset {
   align-items: center;
 }
 
-/* #submitButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-} */
 
 /* error handling */
  input:invalid,
  select:invalid {
-  border: 1px solid var(--color-error);
-  background-color: var(--color-input);
-}
-
- input:valid,
- select:invalid {
-  border: 1px solid var(--color-valid);
+  border: 2px solid var(--color-error);
   background-color: var(--color-input);
 }
 
  input:required,
- select:required {
-  border: none;
+ select:required  {
+  border: 2px solid yellow;
   background-color: var(--color-input);
+} 
+
+input:valid,
+select:valid {
+ border: 2px solid var(--color-valid);
+ background-color: var(--color-input);
+}
+
+input[type="submit"]:invalid {
+  cursor: not-allowed;
+}
+
+input[type="submit"]:valid {
+  cursor: pointer;
 }
 
 /* Admin page */
