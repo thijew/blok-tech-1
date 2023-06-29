@@ -162,16 +162,13 @@ fieldset {
   border: none;
 }
 
-main form fieldset input,
-main form fieldset input::placeholder,
-main form fieldset select {
+ input,
+ input::placeholder,
+ select {
   background-color: var(--color-input);
   color: var(--color-primary);
   font-family: var(--font-body);
-  border: none;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  text-align: center;
 }
 
 .formSubmit {
@@ -181,29 +178,28 @@ main form fieldset select {
   align-items: center;
 }
 
-#submitButton {
-
+/* #submitButton {
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-}
+} */
 
 /* error handling */
-main form fieldset input:invalid,
-main form fieldset select:invalid {
+ input:invalid,
+ select:invalid {
   border: 1px solid var(--color-error);
   background-color: var(--color-input);
 }
 
-main form fieldset input:valid,
-main form fieldset select:invalid {
+ input:valid,
+ select:invalid {
   border: 1px solid var(--color-valid);
   background-color: var(--color-input);
 }
 
-main form fieldset input:required,
-main form fieldset select:required {
+ input:required,
+ select:required {
   border: none;
   background-color: var(--color-input);
 }

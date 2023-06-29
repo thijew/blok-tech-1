@@ -7,10 +7,9 @@
         <%- include("../components/header"); %>
 
             <main class="confirm">
-                <h1>Bedankt voor uw bestelling!</h1>
+                <h1>Bedankt, <%= reservations.name %> voor uw bestelling!</h1>
                     <ul>
                         <li>Een overzicht van uw bestelling</li>
-                        <li><%= reservations.name %></li>
                         <li>Aantal halve kippen: <%= reservations.chickens %></li>
                         <li>Datum: <%= reservations.date %></li>
                         <li>Tijd: <%= reservations.time %></li>

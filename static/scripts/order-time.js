@@ -16,9 +16,10 @@ for (let time = startTime; time <= endTime; time.setMinutes(time.getMinutes() + 
   timeInput.appendChild(option)
 }
 
-
+// Set max order date to 7 days ahead
 const maxDate = new Date(today.getTime() + (7 * 24 * 60 * 60 *
   1000)).toISOString().split('T')[0]
+
 
 const todayStr = today.toISOString().split('T')[0]
 
