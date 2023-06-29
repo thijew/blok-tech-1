@@ -61,7 +61,7 @@ app.get('/admin', async (req, res, next) => {
     //Get all data from the db 
     const reservations = await db.collection('reservations').find().toArray()
     // filter reservations by date
-    const reservationDate = reservations.filter(day => {
+    reservations.filter(day => {
       return day.date
     })
     // console.log(reservationDate)

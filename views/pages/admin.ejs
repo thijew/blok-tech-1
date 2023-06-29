@@ -20,7 +20,7 @@
                                 <li>Reserveringen: <%= totalChickenReservations %></li>
                             </ul>
                             <ul class="right">
-                                <li><%= weather.daily.weathercode[i] %></li>
+                                <li id="weatherCode"><%= weather.daily.weathercode[i] %></li>
                                 <li><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-weather.daily.temperature_2m_max[0] + i %> °C</li>
                                 <% if (weather.daily.rain_sum[i]> 0) { %>
                                 <li><%- weather.daily.rain_sum[i] %> mm</li><% } %>

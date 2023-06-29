@@ -1,5 +1,5 @@
 // Get all the weather code icons
-const weatherCode = document.querySelectorAll('.weatherCode')
+const weatherCode = document.querySelectorAll('#weatherCode')
 
 // Loop through each weather code icon
 weatherCode.forEach((icon) => {
@@ -34,7 +34,22 @@ weatherCode.forEach((icon) => {
         case 71:
             icon.innerHTML = '<img src="/images/wc-71.png" alt="Weather Icon">'
             break
-        case (61, 63, 65, 80, 81, 82):
+        case 61:
+            icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
+            break
+        case 63:
+            icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
+            break
+        case 65:
+            icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
+            break
+        case 80:
+            icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
+            break
+        case 81:
+            icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
+            break
+        case 82:
             icon.innerHTML = '<img src="/images/wc-82.png" alt="Weather Icon">'
             break
         case 95:
