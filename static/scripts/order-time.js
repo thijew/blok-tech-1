@@ -1,4 +1,4 @@
-const select = document.querySelector('#time-input')
+const timeInput = document.querySelector('#time-input')
 
 // Define the available times
 const today = new Date()
@@ -11,9 +11,9 @@ const interval = 15 // 15 minutes
 // Loop through the available times and add an option for each one
 for (let time = startTime; time <= endTime; time.setMinutes(time.getMinutes() + interval)) {
   const option = document.createElement('option')
-  option.value = time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+  option.value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   option.textContent = option.value
-  select.appendChild(option)
+  timeInput.appendChild(option)
 }
 
 console.log('End time:', endTime)

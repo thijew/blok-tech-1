@@ -68,14 +68,15 @@ app.get('/admin', async (req, res, next) => {
     // console.log(reservationDate)
 
     // Get an array of all the chicken reservations for the day
-    const chickenReservations = reservationDate.map(totalChickens => {
-      return totalChickens.chickens
-    })
+    const chickenReservations = ["2", "2", "2", "2", "2"];
 
     // Count up the array of chickens
-    const totalChickenReservations = chickenReservations.reduce((chickenReservations, chickens) => {
-      return chickenReservations + parseInt(chickens)
-    }, 0)
+    const totalChickenReservations = chickenReservations.reduce((total, chickens) => {
+      return total + parseInt(chickens);
+    }, 0);
+
+    console.log(totalChickenReservations);
+
     // console.log(totalChickenReservations)
 
     // Get the weather API

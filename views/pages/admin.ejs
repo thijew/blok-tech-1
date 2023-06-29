@@ -7,41 +7,22 @@
         <%- include("../components/header"); %>
 
             <main>
+
                 <h1>Reserveringen</h1>
+
+                
                 <ul class="adminContainer">
-                    <li>
-                        <section class="left">
-                            <% for (let i=0; i < 7; i++) { %>
-                                <% const date=new Date()%>
-                                    <% date.setDate(date.getDate() + i) %>
-                    <li class="day">
-                        <%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' , day: 'numeric' }) %>
-                    </li>
-                    <li class="reservations">Reserveringen: <%= totalChickenReservations %>
-                    </li>
-                </ul>
-                <% } %>
-                    </section>
-
-                    <section class="right">
-                        <% for (let i=0; i < 7; i++) { %>
-                            <ul class="rightContainer">
-                                <li class="weatherCode">
-                                    <%= weather.daily.weathercode[i] %>
-                                </li>
-                                <li class="weatherTemp"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-
-                                            weather.daily.temperature_2m_max[0] + i %> °C</li>
+                    <% for (let i=0; i < 7; i++) { %>
+                        <% const date=new Date()%>
+                            <% date.setDate(date.getDate() + i) %>
+                                <li class="left"><%= date.toLocaleDateString('nl-NL', { weekday: 'long' , month: 'long' , day: 'numeric' }) %></li>
+                                <li class="left">Reserveringen: <%= totalChickenReservations %></li>
+                                <li class="right"><%= weather.daily.weathercode[i] %></li>
+                                <li class="right"><%- weather.daily.temperature_2m_min[0] + i %> °C tot <%-weather.daily.temperature_2m_max[0] + i %> °C</li>
                                 <% if (weather.daily.rain_sum[i]> 0) { %>
-                                    <li class="weatherRain">
-                                        <%- weather.daily.rain_sum[i] %> mm
-                                    </li>
-                                    <% } %>
-                            </ul>
-                            <% } %>
-                    </section>
-                    </li>
-                    </ul>
-
+                                <li class="right"><%- weather.daily.rain_sum[i] %> mm</li><% } %>
+                        <% } %>
+                </ul>
 
             </main>
 
@@ -49,8 +30,6 @@
 
                 <script src="scripts/weather-api.js"></script>
                 <script src="scripts/weather-code.js"></script>
-
-
 
     </body>
 

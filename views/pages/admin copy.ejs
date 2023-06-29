@@ -3,39 +3,37 @@
 
 <%- include("../components/head"); %>
 
-    <body>
-        <%- include("../components/header"); %>
+<body>
+  <%- include("../components/header"); %>
 
-            <main>
-                <h1>Reserveringen</h1>
+  <main>
+    <h1>Reserveringen</h1>
 
-                <div class="reserve-day">
-                    <ul>
-                        <% for (let i = 0; i < 7; i++) { %>
-                            <% const date = new Date(); %>
-                            <% date.setDate(date.getDate() + i); %>
-                            <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long', month: 'long', day: 'numeric' }) %></li>
+    <div class="reserve-day">
+      <ul>
+        <% for (let i = 0; i < 7; i++) { %>
+        <% const date = new Date(); %>
+        <% date.setDate(date.getDate() + i); %>
+        <li><%= date.toLocaleDateString('nl-NL', { weekday: 'long', month: 'long', day: 'numeric' }) %></li>
 
-                            <li>Reserveringen: <%= chickens.chickens  %></li>
-                          <% } %>
-                    </ul>
-                </div>
+        <li>Reserveringen: <%= chickens.chickens  %></li>
+        <% } %>
+      </ul>
+    </div>
 
-                <div class="weatherApi">
-                    <ul>
-                        <li>Hoog: <%- weather.daily.temperature_2m_max %> °C</li>
-                        <li>Laag: <%- weather.daily.temperature_2m_min %> °C</li>
-                        <li>Regenval: <%- weather.daily.rain_sum %> mm</li>
-                    </ul>
-                </div>
+    <div class="weatherApi">
+      <ul>
+        <li>Hoog: <%- weather.daily.temperature_2m_max %> °C</li>
+        <li>Laag: <%- weather.daily.temperature_2m_min %> °C</li>
+        <li>Regenval: <%- weather.daily.rain_sum %> mm</li>
+      </ul>
+    </div>
 
-            </main>
+  </main>
 
-            <%- include("../components/footer"); %>
+  <%- include("../components/footer"); %>
 
-            <script src="/scripts/weather-api.js"></script>
-    </body>
+  <script src="/scripts/weather-api.js"></script>
+</body>
 
 </html>
-
-

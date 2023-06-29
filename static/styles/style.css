@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: "Roboto-Regular", "Lato-Bold";
-  src:
-    url(../fonts/Roboto-Regular.woff2) format("woff2"),
+  src: url(../fonts/Roboto-Regular.woff2) format("woff2"),
     url(../fonts/Lato-Bold.woff2) format("woff2");
 }
 
@@ -11,18 +10,17 @@
 :root {
   /* colors */
   --color-primary: #432818;
-  --color-secondary: #99282A;
+  --color-secondary: #99282a;
   --color-bg: #ffe6a7;
   --color-text: #e1aa28;
-  --color-input: #D17E42;
-  --color-error: #FF0000;
-  --color-valid: #0FFF50;
+  --color-input: #d17e42;
+  --color-error: #ff0000;
+  --color-valid: #0fff50;
 
   /* fonts */
   --font-body: "Roboto-Regular", Arial, Helvetica, sans-serif;
   --font-head: "Lato-Bold", Arial, Helvetica, sans-serif;
 }
-
 
 * {
   margin: 0;
@@ -40,7 +38,6 @@ body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
   height: 100dvh;
-
 }
 
 main {
@@ -51,7 +48,6 @@ main {
   flex-direction: column;
   margin-bottom: 3rem;
   height: 100dvh;
-
 }
 
 h1 {
@@ -83,7 +79,6 @@ li {
   list-style: none;
 }
 
-
 /* inputs styling */
 input[type="submit"] {
   background-color: var(--color-primary);
@@ -93,9 +88,6 @@ input[type="submit"] {
   padding: 1.2rem 2.5rem 1.2rem;
   font-size: 1.2rem;
 }
-
-
-
 
 /* header and footer */
 header {
@@ -117,7 +109,6 @@ footer {
   bottom: 0;
   height: 2rem;
   background-color: var(--color-primary);
-
 }
 
 header>nav,
@@ -127,7 +118,6 @@ footer>nav {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-
 }
 
 header nav a,
@@ -135,7 +125,6 @@ footer nav a {
   color: var(--color-text);
   text-decoration: none;
 }
-
 
 /* Home page */
 .homeContainer {
@@ -151,7 +140,6 @@ footer nav a {
 .homeContainer p {
   margin: 0 1rem 0 0.72rem;
 }
-
 
 /* Form */
 main>form {
@@ -191,7 +179,6 @@ main>form fieldset input::placeholder,
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .submitButton {
@@ -206,7 +193,6 @@ main>form fieldset input::placeholder,
 main>form fieldset input:invalid {
   border: 1px solid var(--color-error);
   background-color: var(--color-input);
-
 }
 
 main>form fieldset input:valid {
@@ -219,24 +205,23 @@ main>form fieldset input:required {
   background-color: var(--color-input);
 }
 
-
-
-
-
-
 /* Admin page */
 .adminContainer {
+  width: 100%;
   margin: 0;
   padding: 0;
   list-style-type: none;
   display: grid;
   gap: 1rem;
+  grid-template-columns: 1fr 1fr;
 }
 
-.adminContainer li {
-}
+ .adminContainer li {
+  display: grid;
+  grid-template-columns: 1f 1fr;
+ }
 
-.right {
+/* .right {
   display: grid;
   align-items: center;
   height: var(--weather-container-height);
@@ -258,7 +243,7 @@ main>form fieldset input:required {
 .weatherTemp {
   grid-area: 2 / -3 / -2 / -1;
 }
-
+ */
 
 /* 404 page */
 
