@@ -66,7 +66,7 @@ app.get('/admin', async (req, res, next) => {
 
 
     // Get an array of all the chicken reservations for the day
-    const chickenReservations = ["2", "2", "2", "2", "2"];
+    const chickenReservations = ["6", "2", "2", "2", "2"];
 
     // Count up the array of chickens
     const totalChickenReservations = chickenReservations.reduce((total, chickens) => {
