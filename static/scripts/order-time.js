@@ -1,4 +1,6 @@
 const timeInput = document.querySelector('#time-input')
+timeInput.style.display = "block"
+timeInput.setAttribute('required', ''); // Make the JS-generated options required
 
 // Define the available times
 const today = new Date()
@@ -8,12 +10,19 @@ const endTime = new Date(today.getTime())
 endTime.setHours(20, 0, 0, 0); // set end time to 8:00 PM
 const interval = 15 // 15 minutes
 
+
+
 // Loop through the available times and add an option for each one
 for (let time = startTime; time <= endTime; time.setMinutes(time.getMinutes() + interval)) {
   const option = document.createElement('option')
   option.value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   option.textContent = option.value
   timeInput.appendChild(option)
+}
+
+const fallbackSelect = document.querySelector('#time-input-js-off');
+if (fallbackSelect) {
+  fallbackSelect.removeAttribute('required');
 }
 
 // Set max order date to 7 days ahead

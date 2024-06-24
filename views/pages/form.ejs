@@ -34,8 +34,25 @@
 
           <fieldset class="formTime">
             <label for="time-input">Hoelaat wilt u de kip reserveren?</label>
-            <select type="time"id="time-input" name="time" required>
+            <select type="time"id="time-input" name="time" class="js-on">
             </select>
+            <noscript>
+              <select id="time-input-js-off" name="time" required>
+                <option class="js-off" value="17:00">17:00</option>
+                <option class="js-off" value="17:15">17:15</option>
+                <option class="js-off" value="17:30">17:30</option>
+                <option class="js-off" value="17:45">17:45</option>
+                <option class="js-off" value="18:00">18:00</option>
+                <option class="js-off" value="18:15">18:15</option>
+                <option class="js-off" value="18:30">18:30</option>
+                <option class="js-off" value="18:45">18:45</option>
+                <option class="js-off" value="19:00">19:00</option>
+                <option class="js-off" value="19:15">19:15</option>
+                <option class="js-off" value="19:30">19:30</option>
+                <option class="js-off" value="19:45">19:45</option>
+                <option class="js-off" value="20:00">20:00</option>
+              </select>
+            </noscript>
           </fieldset>
 
           <fieldset class="formSubmit">

@@ -222,6 +222,12 @@ input[type="submit"]:valid {
   cursor: pointer;
 }
 
+/* .js-off {
+  display: none;
+} */
+.js-on {
+  display: none;
+}
 /* Admin page */
 .adminContainer {
   width: 100%;
