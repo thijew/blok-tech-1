@@ -20,9 +20,10 @@ for (let time = startTime; time <= endTime; time.setMinutes(time.getMinutes() + 
   timeInput.appendChild(option)
 }
 
-const fallbackSelect = document.querySelector('#time-input-js-off');
-if (fallbackSelect) {
-  fallbackSelect.removeAttribute('required');
+// remove the required attribute if js is on
+const timeFallback = document.querySelector('#time-input-js-off')
+if (timeFallback) {
+  timeFallback.removeAttribute('required')
 }
 
 // Set max order date to 7 days ahead
